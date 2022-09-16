@@ -1,0 +1,330 @@
+---
+title: Circular Time Shift Property
+layout: default
+---
+<div class="container">
+    <aside>
+        <div class="top">
+            <h2>DSP</h2>
+            <div class="close" id="close-btn">
+                <span class="material-symbols-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="index.html" class="">
+                <h3>Home Page</h3>
+            </a>
+            <a href="CrossCorr.html" class="">
+                <h3>Cross Correlation</h3>
+            </a>
+            <a href="AutoCorr.html" class="">
+                <h3>Auto Correlation</h3>
+            </a>
+            <a href="LinearConvolution.html" class="">
+                <h3>Linear Convolution</h3>
+            </a>
+            <a href="CircularConvolution.html" class="">
+                <h3>Circular Convolution</h3>
+            </a>
+            <a href="DFT.html" class="">
+                <h3>Discrete Fourier Transform</h3>
+            </a>
+            <a href="IDFT.html" class="">
+                <h3>Inverse Discrete Fourier Transform</h3>
+            </a>
+            <a href="Properties.html" class="">
+                <h3>DFT & IDFT Properties</h3>
+            </a>
+            <a href="Linearity.html" class="">
+                <h3>Linearity Property</h3>
+            </a>
+            <a href="LinearConvolutionUsingDFT&IDFT.html" class="">
+                <h3>Linear Convolution Property</h3>
+            </a>
+            <a href="CircularConvolutionUsingDFT&IDFT.html" class="">
+                <h3>Circular Convolution Property</h3>
+            </a>
+            <a href="CircularTimeShift.html" class="active">
+                <h3>Circular Timeshift Property</h3>
+            </a>
+            <a href="Modulation.html" class="">
+                <h3>Modulation Property</h3>
+            </a>
+            <a href="FFTTHEORY.html" class="">
+                <h3>FFT Algorithm</h3>
+            </a>
+            <a href="DITFFT.html" class="">
+                <h3>DFT using DITFFT</h3>
+            </a>
+            <a href="IDFTDITFFT.html" class="">
+                <h3>IDFT using DITFFT</h3>
+            </a>
+            <a href="DIFFFT.html" class="">
+                <h3>DFT using DIFFFT</h3>
+            </a>
+            <a href="IDFTDIFFFT.html" class="">
+                <h3>IDFT using DIFFFT</h3>
+            </a>
+            <a href="differences(FIR&IIR).html" class="">
+                <h3>IIR and FIR differences</h3>
+            </a>
+            <a href="directform-1.html" class="">
+                <h3>IIR Direct Form-I</h3>
+            </a>
+            <a href="directForm-2.html" class="">
+                <h3>IIR Direct Form-II</h3>
+            </a>
+            <a href="transposedform.html" class="">
+                <h3>Transposed Form</h3>
+            </a>
+            <a href="cascadeform.html" class="">
+                <h3>IIR Cascade Form</h3>
+            </a>
+            <a href="parallelform(IIR).html" class="">
+                <h3>IIR Parallel Form</h3>
+            </a>
+            <a href="firdirectform.html" class="">
+                <h3>FIR Direct Form</h3>
+            </a>
+            <a href="ladder(IIR).html" class="">
+                <h3>IIR Ladder Structure</h3>
+            </a>
+            <a href="latticeStructure.html" class="">
+                <h3>Lattice Structure</h3>
+            </a>
+            <a href="upsample.html" class="">
+                <h3>Upsample</h3>
+            </a>
+            <a href="downsample.html" class="">
+                <h3>Downsample</h3>
+            </a>
+            <a href="interpolation.html" class="">
+                <h3>Interpolation</h3>
+            </a>
+            <a href="decimation.html" class="">
+                <h3>Decimation</h3>
+            </a>
+            <a href="fractionalSampling.html" class="">
+                <h3>Fractional Sampling Rate</h3>
+            </a>
+            <a href="bilinear.html" class="">
+                <h3>Bilinear Transformation</h3>
+            </a>
+            <a href="impulseinvariant.html" class="">
+                <h3>Impulse Invariant</h3>
+            </a>
+            <a href="FIR.html" class="">
+                <h3>FIR</h3>
+            </a>
+            <a href="aprderivatives.html" class="">
+                <h3>Approximation of Derivatives</h3>
+            </a>
+            <a href="windows.html" class="">
+                <h3>Window Techniques</h3>
+            </a>
+            <a href="butterworth.html" class="">
+                <h3>Butterworth Filters</h3>
+            </a>
+            <a href="chebyshev.html" class="">
+                <h3>Chebyshev Filters</h3>
+            </a>
+            <a href="aboutus.html" class="">
+                <h3>About Us</h3>
+            </a>
+        </div>
+    </aside>
+    <div class="heyMain">
+        <div class="flex-container">
+            <main>
+                <h2 style="text-align: center;"> Circular Time Shift</h2><br>
+                <p><h4><strong>Statement:</strong></h4> Shifting the sequence in time domain by ‘l’ samples is equivalent to multiplying the sequence in frequency domain by the twiddle factor.</p>
+                <p><h4><strong>Proof:</strong></h4> We will be proving the property</p>
+                <p>x((n-l))N = x(n-l) ==> DFT[x(n-l)] = X(k)e<sup>-2πjlk/N</sup>
+                or X(k)W<sup>kl</sup><sub>N</sub></p> where W is the twiddle factor.
+                <h6 style="overflow-y: hidden;">According to DFT,</h6>
+        
+                    <h6 style="overflow-y: hidden;">DFT [x(n)] =   ∑<sub>n=0</sub><sup>N-1</sup> x(n) e<sup>-2πjkn/N</sup></h6>
+                    
+                    <h6 style="overflow-y: hidden;">DFT [x(n-l)] =  ∑<sub>n=0</sub><sup>N-1</sup> x(n-l) e<sup>-2πjkn/N</sup></h6>
+                    
+                    <h6 style="overflow-y: hidden;">Let n-l=p</h6>
+                    
+                    <h6 style="overflow-y: hidden;">n=p+l</h6>
+                    
+                    <h6 style="overflow-y: hidden;">DFT [x(p)] =  ∑<sub>p=0</sub><sup>N-1</sup> x(p) e<sup>-2πjk(p+l)/N</sup></h6>
+                    
+                    <h6 style="overflow-y: hidden;">= e<sup>-2πjkl/N</sup> ∑<sub>p=0</sub><sup>N-1</sup> x(p) e<sup>-2πjkp/N</sup></h6>
+                    
+                    <h6 style="overflow-y: hidden;">= X(k)e<sup>-2πjkl/N</sup></h6>
+                    
+                    <h6 style="overflow-y: hidden;">Hence, proved.</h6><br>
+                <p>
+                    The step-by-step values for the provided input is shown at the bottom of the page:
+                </p>
+            </main>
+            <div class="right">
+                <div class="top">
+                    <button id="menu-btn">
+                        <span class="material-symbols-sharp">menu</span>
+                    </button>
+                    <div class="theme-toggler">
+                        <span class="material-symbols-sharp active">light_mode</span>
+                        <span class="material-symbols-sharp">dark_mode</span>
+                    </div>
+                </div>
+                <div class="interface-section">
+                    <br>
+                    <h3>Enter the sequence :</h3>
+                    <input id="a" placeholder="1,2,3,4..."/>
+                    <br><br>
+                    <h3>Enter the time-shifting factor :</h3>
+                    <input id="b" type="number"/>
+                    <br><br>
+                    <button type="submit" class="btn btn-warning" onclick="cts()">Submit</button>
+                    <br><br>
+                    <h5 id="resp"></h5>
+                    <br><br>
+                    <h4 class="plot-title" id="input-title">Input sequence :</h4><br>
+                    <canvas class="outputSequence" id="inputResp"></canvas>
+                    <br><br>
+                    <h4 class="plot-title" id="impulse-title">Time-Shifted sequence :</h4><br>
+                    <canvas class="outputSequence" id="impulseResp" style="margin-bottom: 100px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <table id="exp"></table><br>
+        <table id="exp1"></table><br>
+        <table id="exp2"></table><br>
+        <table id="exp3"></table><br><br>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function cts(){
+        document.getElementById("exp").innerHTML="";
+        document.getElementById("exp1").innerHTML="";
+        document.getElementById("exp2").innerHTML="";
+        document.getElementById("exp3").innerHTML="";
+        const x = document.getElementById("a").value.split(",");
+        const xt = x.map((val) => parseFloat(val));
+        const l = document.getElementById("b").value;
+        const y = dft(xt,parseInt(l));
+        const xk = dft(xt,0);
+        const z = idft(y);
+        document.getElementById("resp").innerText = "Time-Shifted sequence: " + z;
+        function dft(at,l) {
+            
+            const N = at.length;
+            const ak = [];
+            for(let k=0;k<N;k++) {
+                realSum = 0;
+                imgSum = 0;
+                for(let n=0;n<N;n++) {
+                    re = at[n]*Math.cos(2*Math.PI*k*(n+l)/N).toFixed(2);
+                    im = -(at[n]*Math.sin(2*Math.PI*k*(n+l)/N).toFixed(2));
+                    realSum += re;
+                    imgSum += im;
+                }
+                if(imgSum<0) {
+                    ak.push(String(Math.round(realSum)) + String(Math.round(imgSum)) + "i");
+                } else if(imgSum>0) {
+                    ak.push(Math.round(realSum) + "+" + Math.round(imgSum) + "i");
+                } else {
+                    ak.push(Math.round(realSum));
+                }
+            }
+            return ak;
+        }
+        function idft(a) {
+            const N = a.length;
+            const dftSequence = [];
+            for(let i=0; i<a.length; i++) {
+                dftSequence.push(math.complex(a[i]));
+            }
+            const idftSequence = [];
+            for(let n=0; n<N; n++){
+                realSum = 0;
+                for(let k=0; k<N; k++) {
+                    mul = math.multiply(dftSequence[k],String(Math.cos(2*Math.PI*k*n/N)) + "+" + String(Math.sin(2*Math.PI*k*n/N)) + "i");
+                    realSum += Number(mul["re"]);
+                }
+                idftSequence.push(Math.round(realSum/N));
+            }
+            return idftSequence;
+        }
+
+        const xyInputValues = [];
+        for(let j=0; j<xt.length; j++) {
+            xyInputValues.push({x:j,y:xt[j]});
+        }
+        new Chart("inputResp", {
+            type: "scatter",
+            data: {
+                datasets: [{
+                    pointRadius: 4,
+                    pointBackgroundColor: "rgb(0,0,255)",
+                    data: xyInputValues
+                }]
+            },
+            options: {
+                legend: {display: false}
+            }
+        });
+
+        const xyImpulseValues = [];
+        for(let j=0; j<z.length; j++) {
+            xyImpulseValues.push({x:j,y:z[j]});
+        }
+        new Chart("impulseResp", {
+            type: "scatter",
+            data: {
+                datasets: [{
+                    pointRadius: 4,
+                    pointBackgroundColor: "rgb(0,0,255)",
+                    data: xyImpulseValues
+                }]
+            },
+            options: {
+                legend: {display: false}
+            }
+        });
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<xt.length;i++) {
+            str+=`<td> ${xt[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp").appendChild(tr);
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<xk.length;i++) {
+            str+=`<td> ${xk[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp1").appendChild(tr);
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<y.length;i++) {
+            str+=`<td> ${y[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp2").appendChild(tr);
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<z.length;i++) {
+            str+=`<th> ${z[i]}</th>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp3").appendChild(tr);
+
+
+        document.getElementById("inputResp").style.display ="block";
+        document.getElementById("input-title").style.display ="block";
+        document.getElementById("impulseResp").style.display ="block";
+        document.getElementById("impulse-title").style.display ="block";
+    }
+</script>

@@ -1,0 +1,305 @@
+---
+title: Linearity Property
+layout: default
+---
+<div class="container">
+    <aside>
+        <div class="top">
+            <h2>DSP</h2>
+            <div class="close" id="close-btn">
+                <span class="material-symbols-sharp">close</span>
+            </div>
+        </div>
+        <div class="sidebar">
+            <a href="index.html" class="">
+                <h3>Home Page</h3>
+            </a>
+            <a href="CrossCorr.html" class="">
+                <h3>Cross Correlation</h3>
+            </a>
+            <a href="AutoCorr.html" class="">
+                <h3>Auto Correlation</h3>
+            </a>
+            <a href="LinearConvolution.html" class="">
+                <h3>Linear Convolution</h3>
+            </a>
+            <a href="CircularConvolution.html" class="">
+                <h3>Circular Convolution</h3>
+            </a>
+            <a href="DFT.html" class="">
+                <h3>Discrete Fourier Transform</h3>
+            </a>
+            <a href="IDFT.html" class="">
+                <h3>Inverse Discrete Fourier Transform</h3>
+            </a>
+            <a href="Properties.html" class="">
+                <h3>DFT & IDFT Properties</h3>
+            </a>
+            <a href="Linearity.html" class="active">
+                <h3>Linearity Property</h3>
+            </a>
+            <a href="LinearConvolutionUsingDFT&IDFT.html" class="">
+                <h3>Linear Convolution Property</h3>
+            </a>
+            <a href="CircularConvolutionUsingDFT&IDFT.html" class="">
+                <h3>Circular Convolution Property</h3>
+            </a>
+            <a href="CircularTimeShift.html" class="">
+                <h3>Circular Timeshift Property</h3>
+            </a>
+            <a href="Modulation.html" class="">
+                <h3>Modulation Property</h3>
+            </a>
+            <a href="FFTTHEORY.html" class="">
+                <h3>FFT Algorithm</h3>
+              </a>
+              <a href="DITFFT.html" class="">
+                <h3>DFT using DITFFT</h3>
+              </a>
+              <a href="IDFTDITFFT.html" class="">
+                <h3>IDFT using DITFFT</h3>
+              </a>
+              <a href="DIFFFT.html" class="">
+                <h3>DFT using DIFFFT</h3>
+              </a>
+              <a href="IDFTDIFFFT.html" class="">
+                <h3>IDFT using DIFFFT</h3>
+              </a>
+            <a href="differences(FIR&IIR).html" class="">
+                <h3>IIR and FIR differences</h3>
+            </a>
+            <a href="directform-1.html" class="">
+                <h3>IIR Direct Form-I</h3>
+            </a>
+            <a href="directForm-2.html" class="">
+                <h3>IIR Direct Form-II</h3>
+            </a>
+            <a href="transposedform.html" class="">
+                <h3>Transposed Form</h3>
+            </a>
+            <a href="cascadeform.html" class="">
+                <h3>IIR Cascade Form</h3>
+            </a>
+            <a href="parallelform(IIR).html" class="">
+                <h3>IIR Parallel Form</h3>
+            </a>
+            <a href="firdirectform.html" class="">
+                <h3>FIR Direct Form</h3>
+            </a>
+            <a href="ladder(IIR).html" class="">
+                <h3>IIR Ladder Structure</h3>
+            </a>
+            <a href="latticeStructure.html" class="">
+                <h3>Lattice Structure</h3>
+            </a>
+            <a href="upsample.html" class="">
+                <h3>Upsample</h3>
+            </a>
+            <a href="downsample.html" class="">
+                <h3>Downsample</h3>
+            </a>
+            <a href="interpolation.html" class="">
+                <h3>Interpolation</h3>
+            </a>
+            <a href="decimation.html" class="">
+                <h3>Decimation</h3>
+            </a>
+            <a href="fractionalSampling.html" class="">
+                <h3>Fractional Sampling Rate</h3>
+            </a>
+            <a href="bilinear.html" class="">
+                <h3>Bilinear Transformation</h3>
+            </a>
+            <a href="impulseinvariant.html" class="">
+                <h3>Impulse Invariant</h3>
+            </a>
+            <a href="FIR.html" class="">
+                <h3>FIR</h3>
+            </a>
+            <a href="aprderivatives.html" class="">
+                <h3>Approximation of Derivatives</h3>
+            </a>
+            <a href="windows.html" class="">
+                <h3>Window Techniques</h3>
+            </a>
+            <a href="butterworth.html" class="">
+                <h3>Butterworth Filters</h3>
+            </a>
+            <a href="chebyshev.html" class="">
+                <h3>Chebyshev Filters</h3>
+            </a>
+            <a href="aboutus.html" class="">
+                <h3>About Us</h3>
+            </a>
+        </div>
+    </aside>
+    <div class="heyMain">
+        <div class="flex-container">
+            <main>
+                <h2 style="text-align: center;">Linearity Property</h2><br>
+                <p><h4><strong>Statement:</strong></h4> The DFT of the linear combination of two or more signals is the sum of the linear combination of DFT of individual signals.</p>
+                <p><h4><strong>Proof:</strong></h4> We will be proving the property</p>
+                <p>a<sub>1</sub>x<sub>1</sub>(n) + a<sub>2</sub>x<sub>2</sub>(n) ==> DFT[a<sub>1</sub>x<sub>1</sub>(n) + a<sub>2</sub>x<sub>2</sub>(n)] = a<sub>1</sub>X<sub>1</sub>[k] + a<sub>2</sub>X<sub>2</sub>[k] </p>
+                <h6 style="overflow-y: hidden;">We have the formula to calculate DFT:</h6>
+        
+                    <h6 style="overflow-y: hidden;">X(k) =   ∑<sub>n=0</sub><sup>N-1</sup> x(n)W<sub>N</sub><sup>nk</sup> where k = 0, 1, 2, … N-1.</h6>
+        
+                    <h6 style="overflow-y: hidden;">Here x(n) = a<sub>1</sub>x<sub>1</sub>(n) + a<sub>2</sub>x<sub>2</sub>(n)</h6>
+        
+                    <h6 style="overflow-y: hidden;">Therefore,</h6>
+        
+                    <h6 style="overflow-y: hidden;">X(k) =  ∑<sub>n=0</sub><sup>N-1</sup> a<sub>1</sub>x<sub>1</sub>(n) + a<sub>2</sub>x<sub>2</sub>(n)W<sub>N</sub><sup>nk</sup></h6>
+        
+                    <h6 style="overflow-y: hidden;">=  ∑<sub>n=0</sub><sup>N-1</sup> a<sub>1</sub>x<sub>1</sub>(n)W<sub>N</sub><sup>nk</sup> +  ∑<sub>n=0</sub><sup>N-1</sup> a<sub>2</sub>x<sub>2</sub>(n)W<sub>N</sub><sup>nk</sup></h6>
+        
+                    <h6 style="overflow-y: hidden;">a1 and a2 are constants and can be separated, therefore,</h6>
+        
+                    <h6 style="overflow-y: hidden;">= a<sub>1</sub> ∑<sub>n=0</sub><sup>N-1</sup> x<sub>1</sub>(n)W<sub>N</sub><sup>nk</sup> + a<sub>2</sub> ∑<sub>n=0</sub><sup>N-1</sup> x<sub>2</sub>(n)W<sub>N</sub><sup>nk</sup></h6>
+        
+                    <h6 style="overflow-y: hidden;">= a<sub>1</sub>X<sub>1</sub>[k] + a<sub>2</sub>X<sub>2</sub>[k]</h6>
+        
+                    <h6 style="overflow-y: hidden;">Hence, proved.</h6><br>
+                <p>
+                    The step-by-step values for the provided input is shown at the bottom of the page:
+                </p>
+            </main>
+            <div class="right">
+                <div class="top">
+                    <button id="menu-btn">
+                        <span class="material-symbols-sharp">menu</span>
+                    </button>
+                    <div class="theme-toggler">
+                        <span class="material-symbols-sharp active">light_mode</span>
+                        <span class="material-symbols-sharp">dark_mode</span>
+                    </div>
+                </div>
+                <div class="interface-section">
+                    <br>
+                    <h3>Enter the constant a1: </h3>
+                    <input id="a1" type="number"/>
+                    <br><br>
+                    <h3 style="overflow-y: hidden;">Enter x<sub>1</sub>(n) sequence:</h3>
+                    <input id="a" placeholder="1,2,3,4..."/>
+                    <br><br>
+                    <h3>Enter the constant a2: </h3>
+                    <input id="a2" type="number"/>
+                    <br><br>
+                    <h3 style="overflow-y: hidden;">Enter x<sub>2</sub>(n) sequence :</h3>
+                    <input id="b" placeholder="1,2,3,4..."/>
+                    <br><br>
+                    <button type="submit" class="btn btn-warning" onclick="lin()">Submit</button>
+                    <br><br>
+                    <h5 id="resp"></h5><br><br>
+                </div>
+            </div>
+        </div>
+        <table id="exp"></table><br>
+        <table id="exp1"></table><br>
+        <table id="exp2"></table><br>
+        <table id="exp3"></table><br><br>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function lin() {
+        document.getElementById("exp").innerHTML="";
+        document.getElementById("exp1").innerHTML="";
+        document.getElementById("exp2").innerHTML="";
+        document.getElementById("exp3").innerHTML="";
+        const a1 = Number(document.getElementById("a1").value);
+        const x1 = document.getElementById("a").value.split(",");
+        const a2 = Number(document.getElementById("a2").value);
+        const x2 = document.getElementById("b").value.split(",");
+        const xt1 = x1.map((val) => parseFloat(val));
+        const xt2 = x2.map((val) => parseFloat(val));
+        const axt1 = xt1.map((val)=> val*a1);
+        const axt2 = xt2.map((val)=> val*a2);
+        const m = axt1.length;
+        const n = axt2.length;
+        const N = Math.max(m,n);
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<m;i++) {
+            str+=`<td> ${xt1[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp").appendChild(tr);
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<n;i++) {
+            str+=`<td> ${xt2[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp").appendChild(tr);
+
+        const x1k = dft(xt1,m);
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<m;i++) {
+            str+=`<td> ${x1k[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp1").appendChild(tr);
+
+        const x2k = dft(xt2,n);
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<n;i++) {
+            str+=`<td> ${x2k[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp1").appendChild(tr);
+
+
+        for(let a=0; a<N-m; a++) {
+            axt1.push(0);
+        }
+        for(let b=0; b<N-n; b++) {
+            axt2.push(0);
+        }
+        const sum = [];
+        for(let i=0;i<N;i++) {
+            sum.push(axt1[i]+axt2[i]);
+        }
+
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<N;i++) {
+            str+=`<td> ${sum[i]}</td>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp2").appendChild(tr);
+
+
+        function dft(a,N) {
+            const ak = [];
+            for(let k=0;k<N;k++) {
+                realSum = 0;
+                imgSum = 0;
+                for(let n=0;n<N;n++) {
+                    realSum += a[n]*Math.cos(2*Math.PI*k*n/N).toFixed(2);
+                    imgSum += -(a[n]*Math.sin(2*Math.PI*k*n/N).toFixed(2));
+                }
+                if(imgSum<0) {
+                    ak.push(String(Math.round(realSum)) + String(Math.round(imgSum)) + "i");
+                } else if(imgSum>0) {
+                    ak.push(Math.round(realSum) + "+" + Math.round(imgSum) + "i");
+                } else {
+                    ak.push(String(Math.round(realSum)));
+                }
+            }
+            return ak;
+        }
+        const z = dft(sum,N);
+        document.getElementById("resp").innerText = "The Output is: " + z;
+        var tr = document.createElement('tr');
+        var str ='';
+        for(let i=0;i<N;i++) {
+            str+=`<th> ${z[i]}</th>`;
+            tr.innerHTML=str;
+        }
+        document.getElementById("exp3").appendChild(tr);
+    }
+</script>
